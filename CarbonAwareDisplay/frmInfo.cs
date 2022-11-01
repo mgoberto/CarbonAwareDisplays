@@ -10,10 +10,10 @@ namespace LightMeasure
     public partial class frmInfo : Form
     {
         // Medium Consumptiion Watts per minute per inche
-        double cLCD = 0.048965762;
-        double cOLED = 0.028508189;
-        double cPlasma = 0.091409575;
-        double cCRT = 0.088159251;
+        double cLCD = 0.050448718;
+        double cOLED = 0.031944444;
+        double cPlasma = 0.097179487;
+        double cCRT = 0.098484848;
 
         // Fator Reduce Bright
         double fBright = 0.820416667;
@@ -23,8 +23,8 @@ namespace LightMeasure
         double fColorReducationMedium = 0.24;
         double fColorReducationMin = 0.13;
 
-        // Time Online (minute x hour x day x month)
-        double fTimeOnYear = 60 * 8 * 20 * 12;
+        // Time Online (minute x hour x days year)
+        double fTimeOnYear = 60 * 24 * 365;
 
         // Local Variables
         private static List<Location> Local = null;
@@ -86,8 +86,8 @@ namespace LightMeasure
                 try
                 {
                     var colorReduction = (lScreen.Sum(_ => _.ReductionColorShow) / Screen.AllScreens.Count() * 100).ToString("N2");
-                    var saveCo2 = lScreen.Sum(_ => _.SaveEmissionYear).ToString("N0");
-                    var saveTree = (Math.Round(lScreen.Sum(_ => _.SaveEmissionYear) / 10)).ToString("N0");
+                    var saveCo2 = (lScreen.Sum(_ => _.SaveEmissionYear) / 1000).ToString("N3");
+                    var saveTree = (lScreen.Sum(_ => _.SaveEmissionYear) / 1000 / 10).ToString("N1");
                     new ToastContentBuilder()
                         .AddArgument("action", "viewConversation")
                         .AddArgument("conversationId", 9813)
@@ -325,17 +325,17 @@ namespace LightMeasure
         private void PopulateTotal()
         {
             pnlTotal.Visible = true;
-            lblTotalBasicCO2Emit.Text = "Regular CO2e Emit " + (lScreen.Sum(_ => _.BasicCO2Emit) * 1000).ToString("N4") + " g/m";
-            lblTotalActualCO2Emit.Text = (lScreen.Sum(_ => _.FinalCO2Emit) * 1000).ToString("N4");
-            lblTotalSaveCO2EmitYear.Text = lScreen.Sum(_ => _.SaveEmissionYear).ToString("N0");
+            lblTotalBasicCO2Emit.Text = "Regular CO2e Emit " + (lScreen.Sum(_ => _.BasicCO2Emit)).ToString("N4") + " g/m";
+            lblTotalActualCO2Emit.Text = (lScreen.Sum(_ => _.FinalCO2Emit)).ToString("N4");
+            lblTotalSaveCO2EmitYear.Text = (lScreen.Sum(_ => _.SaveEmissionYear) /1000).ToString("N3");
             lblTotalSaveEmission.Text = (lScreen.Sum(_ => _.ReductionColorShow) / Screen.AllScreens.Count() * 100).ToString("N2") + "%";
-            lblTotalTrees.Text = (Math.Round(lScreen.Sum(_ => _.SaveEmissionYear) / 10)).ToString("N0");
-            lblTotalSaveMore.Text = ((lScreen.Sum(_ => _.FinalCO2Emit) - lScreen.Sum(_ => _.PossibleCO2Emit)) * fTimeOnYear / 10).ToString("N0");
-            lblTotalSaveMore.Visible = ((lScreen.Sum(_ => _.FinalCO2Emit) - lScreen.Sum(_ => _.PossibleCO2Emit)) * fTimeOnYear / 10) > 0.5;
+            lblTotalTrees.Text = ((lScreen.Sum(_ => _.SaveEmissionYear) / 1000) / 10).ToString("N1");
+            lblTotalSaveMore.Text = ((lScreen.Sum(_ => _.FinalCO2Emit) - lScreen.Sum(_ => _.PossibleCO2Emit)) /1000 * fTimeOnYear / 10).ToString("N1");
+            lblTotalSaveMore.Visible = ((lScreen.Sum(_ => _.FinalCO2Emit) - lScreen.Sum(_ => _.PossibleCO2Emit)) / 1000 * fTimeOnYear / 10) > 0;
             lblTotalSaveMoreText.Visible = lblTotalSaveMore.Visible;
             fStart.lbPctReducion.Text = (lScreen.Sum(_ => _.ReductionColorShow) / Screen.AllScreens.Count() * 100).ToString("N2");
-            fStart.lbCO2SaveEmission.Text = lScreen.Sum(_ => _.SaveEmissionYear).ToString("N0");
-            fStart.lbTreeSave.Text = (Math.Round(lScreen.Sum(_ => _.SaveEmissionYear) / 10)).ToString("N0");
+            fStart.lbCO2SaveEmission.Text = (lScreen.Sum(_ => _.SaveEmissionYear) / 1000).ToString("N3");
+            fStart.lbTreeSave.Text = ((lScreen.Sum(_ => _.SaveEmissionYear) / 1000) / 10).ToString("N1");
             if (lScreen.Sum(_ => _.ReductionColorShow) / Screen.AllScreens.Count() * 100 == 0)
             {
 
@@ -353,13 +353,13 @@ namespace LightMeasure
                                     Label lbTelaTrees,
                                     Label lbTelaSaveMore)
         {
-            lbTelaBasicCO2Emit.Text = "Regular CO2e Emission " + (acScreen.BasicCO2Emit * 1000).ToString("N4") + " g/m";
-            lbTelaActualCO2Emit.Text = (acScreen.FinalCO2Emit * 1000).ToString("N4");
-            lbTelaSaveCO2EmitYear.Text = acScreen.SaveEmissionYear.ToString("N0");
+            lbTelaBasicCO2Emit.Text = "Regular CO2e Emission " + (acScreen.BasicCO2Emit).ToString("N4") + " g/m";
+            lbTelaActualCO2Emit.Text = (acScreen.FinalCO2Emit).ToString("N4");
+            lbTelaSaveCO2EmitYear.Text = (acScreen.SaveEmissionYear / 1000).ToString("N3");
             lbTelaSaveEmission.Text = (acScreen.ReductionColorShow * 100).ToString("N2") + "%";
-            lbTelaTrees.Text = (Math.Round(acScreen.SaveEmissionYear / 10)).ToString("N0");
-            lbTelaSaveMore.Text = ((acScreen.FinalCO2Emit - acScreen.PossibleCO2Emit) * fTimeOnYear / 10).ToString("N0");
-            lbTelaSaveMore.Visible = ((acScreen.FinalCO2Emit - acScreen.PossibleCO2Emit) * fTimeOnYear / 10) > 0.5;
+            lbTelaTrees.Text = ((acScreen.SaveEmissionYear / 1000) / 10 ).ToString("N1");
+            lbTelaSaveMore.Text = (((acScreen.FinalCO2Emit - acScreen.PossibleCO2Emit) / 1000 / 10) * fTimeOnYear ).ToString("N1");
+            lbTelaSaveMore.Visible = (((acScreen.FinalCO2Emit - acScreen.PossibleCO2Emit)/ 1000) * fTimeOnYear ) > 0;
             lblTela1SaveMoreText.Visible = lbTelaSaveMore.Visible;
             if (acScreen.ReductionColorShow * 100 == 0)
             {
