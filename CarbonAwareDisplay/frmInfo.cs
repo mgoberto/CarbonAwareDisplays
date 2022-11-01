@@ -116,6 +116,7 @@ namespace LightMeasure
                 LoadEmission();
                 ExecuteScreenCalculate();
                 pnlSelectRegion.Visible = false;
+                chkNotification.Visible = true;
                 pBoxBack.Visible = true;
             }
             this.Cursor = Cursors.Default;
@@ -195,6 +196,7 @@ namespace LightMeasure
             else
             {
                 pnlSelectRegion.Visible = true;
+                chkNotification.Visible = false;
             }
         }
 

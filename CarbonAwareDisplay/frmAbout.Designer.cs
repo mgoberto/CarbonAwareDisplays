@@ -51,9 +51,9 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(12, 530);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(248, 15);
+            this.label1.Size = new System.Drawing.Size(343, 15);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Develop by Marcelo Goberto and Tim Schade ";
+            this.label1.Text = "Develop by Marcelo Goberto (Brazil) and Tim Schade (Germany)";
             // 
             // frmAbout
             // 

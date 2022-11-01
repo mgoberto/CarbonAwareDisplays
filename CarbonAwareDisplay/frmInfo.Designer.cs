@@ -1342,9 +1342,9 @@
             // btnAbout
             // 
             this.btnAbout.Image = ((System.Drawing.Image)(resources.GetObject("btnAbout.Image")));
-            this.btnAbout.Location = new System.Drawing.Point(198, 415);
+            this.btnAbout.Location = new System.Drawing.Point(846, 4);
             this.btnAbout.Name = "btnAbout";
-            this.btnAbout.Size = new System.Drawing.Size(36, 36);
+            this.btnAbout.Size = new System.Drawing.Size(32, 32);
             this.btnAbout.TabIndex = 55;
             this.btnAbout.UseVisualStyleBackColor = true;
             this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);
