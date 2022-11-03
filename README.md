@@ -35,17 +35,17 @@ Additionally, the carbon impact of one kilowatt-hour differs by **region and day
 | Region              | Date                              | carbon intensity per kwh |
 |:--------------------|:----------------------------------|-------------------------:|
 | Germany             | 2<sup>nd</sup> November 2020, 6PM |        **324** gCO2e/kwh |
-| Germany             | 3<sup>rd</sup> November 2020, 2PM |           **227** gCO2e/kwh |
-| Brazil (North East) | 3<sup>rd</sup> November 2020, 2PM |            **57** gCO2e/kwh |
+| Germany             | 3<sup>rd</sup> November 2020, 2PM |        **227** gCO2e/kwh |
+| Brazil (North East) | 3<sup>rd</sup> November 2020, 2PM |         **57** gCO2e/kwh |
+
 ([Source](https://app.electricitymaps.com/))
 
-Users needs to get insights and awareness on this and require tooling to calibrate its monitor correctly to find a good match between user experience and greenhouse gas efficiency
+Users' need to get insights and awareness on this and require tooling to calibrate its monitor correctly to find a good match between user experience and greenhouse gas efficiency
 
 ## Solution
 The `Carbon Aware Displays` application is developed in C# using the .NET framework. It is a calculator and consultant to reduce the carbon impact of Monitors and integrated Displays. On a scheduled basis (default: once a minute) it checks the brightness of the monitor and the color of each pixel. Different colors have different energy coefficients on different device types. According to this information it calculates the current energy consumption and multiplies it with associated carbon emissions of the electricity grid, where the monitor is used. The data is set into proportion to the energy that would have been used if not brightness or color reduction would have taken place. For comprehensibility it also explains the savings in user understandable units like trees or driven car kilometers
 
 The application could be run in two different modes. First one is the normal view, also to be considered to run in background. The second one contains more details to adjust the energy consumption and CO2 savings:
-
 
 
 A screenshot of the background view looks like this which runs in the bottom-right corner of main display:
@@ -99,10 +99,14 @@ The current implementation supports Windows 10. Possible enhancements for the Wi
 Additionally, to the enhancements on the Windows 10 version it is foreseen to migrate the concept to Linux/Mac and of course mobile applications, maybe TV’s, e.g. Android TV
 
 ## Links and further references
-- [Video Pitch CarbonHack22]()
+- [Video Pitch CarbonHack22](https://youtu.be/5-jxkqzlnrk)
 - https://www.electrical4u.net/energy-calculation/led-lcd-crt-tv-plasma-tv-power-consumption/
 - https://www.industr.com/de/die-rolle-der-software-beim-erreichen-von-klimazielen-2663814 
 - https://www.greenlivingtips.com/articles/monitor-colors-and-electricity.html 
 - https://www.scienceabc.com/innovation/does-the-dark-mode-on-the-computer-actually-save-electricity.html 
 - https://www.quora.com/How-can-you-calculate-which-color-consumes-the-most-energy-from-a-display 
 - https://www.researchgate.net/publication/269750337_Green_Computing_and_Energy_Consumption_Issues_in_the_Modern_Age
+
+
+## License
+See the [LICENSE](LICENSE.md) file for license rights and limitations (MIT).
