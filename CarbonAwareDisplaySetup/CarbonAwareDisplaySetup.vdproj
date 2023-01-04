@@ -50,6 +50,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
         "Release"
@@ -74,6 +82,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
     }
@@ -141,17 +157,6 @@
             "Property" = "8:ProgramMenuFolder"
                 "Folders"
                 {
-                    "{9EF0B969-E518-4E46-987F-47570745A589}:_10A3778E2065439CA860A8F84C304C33"
-                    {
-                    "Name" = "8:Carbon Aware Displays"
-                    "AlwaysCreate" = "11:FALSE"
-                    "Condition" = "8:"
-                    "Transitive" = "11:FALSE"
-                    "Property" = "8:_0A1D262BA4A64580A2EDCE0B45B08CE8"
-                        "Folders"
-                        {
-                        }
-                    }
                 }
             }
             "{3C67513D-01DD-4637-8A68-80971EB9504F}:_AAA1C7A104BA465D93B55A1F09D5E820"
@@ -194,7 +199,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Carbon Aware Displays"
         "ProductCode" = "8:{2358ED78-74AD-4015-94A0-4386B962E4E9}"
-        "PackageCode" = "8:{BE7F0198-3FCA-4FE4-A47A-65F1465C6572}"
+        "PackageCode" = "8:{A536EB73-7F8B-448E-9012-AACB78C08295}"
         "UpgradeCode" = "8:{B9B123BF-F4A8-4922-A6B5-45061E15E672}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -202,7 +207,7 @@
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
         "ProductVersion" = "8:1.0.0"
-        "Manufacturer" = "8:Marcelo Goberto / Tim Schade"
+        "Manufacturer" = "8:CarbonAwareDisplays"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
         "Title" = "8:Carbon Aware Displays"
@@ -337,7 +342,7 @@
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
             "Target" = "8:_ADF6E19A0E4E4C138A996C0B3F162BB0"
-            "Folder" = "8:_10A3778E2065439CA860A8F84C304C33"
+            "Folder" = "8:_10E9902E04164130B2B498427C5D51B0"
             "WorkingFolder" = "8:_AAA1C7A104BA465D93B55A1F09D5E820"
             "Icon" = "8:_EC4DCC49DA7D4A6E9EB08FDA4C17B5AB"
             "Feature" = "8:"
@@ -743,7 +748,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_ADF6E19A0E4E4C138A996C0B3F162BB0"
             {
-            "SourcePath" = "8:..\\CarbonAwareDisplay\\obj\\Debug\\net6.0-windows10.0.17763.0\\apphost.exe"
+            "SourcePath" = "8:..\\CarbonAwareDisplay\\obj\\Release\\net6.0-windows10.0.17763.0\\apphost.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_AAA1C7A104BA465D93B55A1F09D5E820"

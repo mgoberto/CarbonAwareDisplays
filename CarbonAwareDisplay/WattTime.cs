@@ -132,8 +132,8 @@ namespace LightMeasure
         /// <returns>Token</returns>
         private static string Login()
         {
-            string Username = ConfigurationManager.AppSettings["usernameWT"];
-            string Password = ConfigurationManager.AppSettings["passwordWT"];
+            string Username = "gsf_marcelo569";
+            string Password = "BI6++3PRPGgenA)$4";
             try
             {
                 HttpClient client = new HttpClient();
