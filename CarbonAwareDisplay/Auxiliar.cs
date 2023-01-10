@@ -33,30 +33,30 @@ namespace LightMeasure
             return (dlat, dlng);
         }
 
-        /// <summary>
-        /// Get Current Brightness First Screen 
-        /// </summary>
-        /// <returns></returns>
-        public static int GetCurrentBrightness()
-        {
-            //define scope (namespace)
-            System.Management.ManagementScope s = new System.Management.ManagementScope("root\\WMI");
-            //define query
-            System.Management.SelectQuery q = new System.Management.SelectQuery("WmiMonitorBrightness");
-            //output current brightness
-            System.Management.ManagementObjectSearcher mos = new System.Management.ManagementObjectSearcher(s, q);
-            System.Management.ManagementObjectCollection moc = mos.Get();
-            //store result
-            byte curBrightness = 0;
-            foreach (System.Management.ManagementObject o in moc)
-            {
-                curBrightness = (byte)o.GetPropertyValue("CurrentBrightness");
-                break; //only work on the first object
-            }
-            moc.Dispose();
-            mos.Dispose();
-            return (int)curBrightness;
-        }
+        ///// <summary>
+        ///// Get Current Brightness First Screen 
+        ///// </summary>
+        ///// <returns></returns>
+        //public static int GetCurrentBrightness()
+        //{
+        //    //define scope (namespace)
+        //    System.Management.ManagementScope s = new System.Management.ManagementScope("root\\WMI");
+        //    //define query
+        //    System.Management.SelectQuery q = new System.Management.SelectQuery("WmiMonitorBrightness");
+        //    //output current brightness
+        //    System.Management.ManagementObjectSearcher mos = new System.Management.ManagementObjectSearcher(s, q);
+        //    System.Management.ManagementObjectCollection moc = mos.Get();
+        //    //store result
+        //    byte curBrightness = 0;
+        //    foreach (System.Management.ManagementObject o in moc)
+        //    {
+        //        curBrightness = (byte)o.GetPropertyValue("CurrentBrightness");
+        //        break; //only work on the first object
+        //    }
+        //    moc.Dispose();
+        //    mos.Dispose();
+        //    return (int)curBrightness;
+        //}
 
         public static void AddUpdateAppSettings(string key, string value)
         {

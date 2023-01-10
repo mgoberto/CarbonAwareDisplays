@@ -2,7 +2,6 @@ using Microsoft.Toolkit.Uwp.Notifications;
 using System.Configuration;
 using System.Diagnostics;
 using System.Drawing.Imaging;
-using System.Management;
 using System.Runtime.InteropServices;
 
 namespace LightMeasure
@@ -42,7 +41,7 @@ namespace LightMeasure
         private void Form1_Load(object sender, EventArgs e)
         {
             tmrReload.Interval = tmrReloadScreen * 1000;
-            trbTela1.Value = Auxiliar.GetCurrentBrightness();
+            trbTela1.Value = 100; // Auxiliar.GetCurrentBrightness();
             trbTela2.Value = 100;
             trbTela3.Value = 100;
             (double lat, double lng) = Auxiliar.GetPosition();

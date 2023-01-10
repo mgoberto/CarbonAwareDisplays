@@ -7,6 +7,7 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
     <ApplicationIcon>576981_carbon_co2_emission_emissions energy_green energy_icon.ico</ApplicationIcon>
+    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
@@ -16,7 +17,6 @@
   <ItemGroup>
     <PackageReference Include="IdentityModel" Version="6.0.0" />
     <PackageReference Include="Microsoft.Toolkit.Uwp.Notifications" Version="7.1.3" />
-    <PackageReference Include="System.Management" Version="7.0.0" />
   </ItemGroup>
 
   <ItemGroup>

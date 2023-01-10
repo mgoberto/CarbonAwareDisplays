@@ -214,7 +214,7 @@
         "Subject" = "8:"
         "ARPCONTACT" = "8:Marcelo Goberto / Tim Schade"
         "Keywords" = "8:"
-        "ARPCOMMENTS" = "8:"
+        "ARPCOMMENTS" = "8:Carbon Aware Displays"
         "ARPURLINFOABOUT" = "8:"
         "ARPPRODUCTICON" = "8:"
         "ARPIconIndex" = "3:0"
@@ -748,7 +748,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_ADF6E19A0E4E4C138A996C0B3F162BB0"
             {
-            "SourcePath" = "8:..\\CarbonAwareDisplay\\obj\\Release\\net6.0-windows10.0.17763.0\\apphost.exe"
+            "SourcePath" = "8:..\\CarbonAwareDisplay\\obj\\Debug\\net6.0-windows10.0.17763.0\\apphost.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_AAA1C7A104BA465D93B55A1F09D5E820"
